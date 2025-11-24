@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time Capsule</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('create')">Create</a>
+    <a onclick="showPage('unlock')">Unlock</a>
+    <a onclick="showPage('about')">About</a>
+</nav>
+
+<!-- HOME PAGE -->
+<section id="home" class="page">
+    <div class="container">
+        <h1>📦 Welcome to the Time Capsule</h1>
+        <p>Create a message for your future self.</p>
+        <button onclick="showPage('create')">Create Capsule</button>
+    </div>
+</section>
+
+<!-- CREATE PAGE -->
+<section id="create" class="page hidden">
+    <div class="container">
+        <h1>📝 Create Capsule</h1>
+
+        <textarea id="message" placeholder="Write your message..."></textarea>
+
+        <label>Unlock Date:</label>
+        <input type="date" id="unlockDate">
+
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="Create a password">
+
+        <button onclick="saveCapsule()">Save Capsule</button>
+
+        <div id="saved" class="resultBox hidden"></div>
+        <div id="countdown" class="countdown hidden"></div>
+    </div>
+</section>
+
+<!-- UNLOCK PAGE -->
+<section id="unlock" class="page hidden">
+    <div class="container">
+        <h1>🔓 Unlock Capsule</h1>
+
+        <input type="password" id="unlockPass" placeholder="Enter password">
+        <button onclick="unlockCapsule()">Unlock</button>
+
+        <div id="result" class="resultBox hidden"></div>
+    </div>
+</section>
+
+<!-- ABOUT PAGE -->
+<section id="about" class="page hidden">
+    <div class="container">
+        <h1>ℹ️ About This Project</h1>
+        <p>This Time Capsule lets you save a message into the future.</p>
+        <p>Your capsule is stored in your browser using localStorage.</p>
+        <p>Return after the unlock date to open your message!</p>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
